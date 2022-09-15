@@ -1697,7 +1697,7 @@ class VirtualMachine extends EventEmitter {
      * @param {!*} value The new value of that variable.
      * @returns {boolean} whether the target and variable were found and updated.
      */
-    setVariableValue (targetId, variableId, value) {
+    setVariableValue (targetId, variableId, value) { 
         const target = this.runtime.getTargetById(targetId);
         if (target) {
             const variable = target.lookupVariableById(variableId);
