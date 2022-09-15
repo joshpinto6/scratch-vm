@@ -25,7 +25,8 @@ const builtinExtensions = {
     boost: () => require('../extensions/scratch3_boost'),
     gdxfor: () => require('../extensions/scratch3_gdx_for'),
     // tw: core extension
-    tw: () => require('../extensions/tw')
+    tw: () => require('../extensions/tw'),
+    ultimategamepad: () => require('../extensions/ultimategamepad')
 };
 
 /**
@@ -332,7 +333,7 @@ class ExtensionManager {
     _prepareExtensionInfo (serviceName, extensionInfo) {
         extensionInfo = Object.assign({}, extensionInfo);
         if (!/^[a-z0-9]+$/i.test(extensionInfo.id)) {
-            throw new Error('Invalid extension id');
+            throw new Error(`Invalid extension id ${extensionInfo.id}`);
         }
         extensionInfo.name = extensionInfo.name || extensionInfo.id;
         extensionInfo.blocks = extensionInfo.blocks || [];
